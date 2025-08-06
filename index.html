@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>César Cabral | Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container">
+
+  <aside class="sidebar">
+    <h1>César Cabral</h1>
+    <nav>
+      <ul>
+        <li><a href="#sobre" class="active">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#curriculo">Currículo</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <section id="sobre" data-aos="fade-up" data-aos-duration="800">
+      <h2>Sobre Mim</h2>
+      <p>Oi! Eu sou o Cesar Cabral — alguém que decidiu virar a chave e mergulhar de vez no mundo da tecnologia. Depois de anos atuando na área comercial, entre negociações e estratégias, percebi que meu próximo passo precisava envolver criação, lógica e propósito.</p>
+      <p>Hoje sou estudante de Análise e desenvolvimento de sistemas e tenho me dedicado a aprender programação, desenvolvimento web e ferramentas que tornem a vida mais simples e eficiente. Gosto de estudar de forma prática, com projetos reais e organização no dia a dia.</p>
+      <p>Além do código, me envolvo em ações sociais, palestras para adolescentes e iniciativas que gerem impacto. Acredito que tecnologia boa é aquela que conecta, transforma e facilita a vida das pessoas.</p>
+      <p>Esse site é parte do meu processo de aprendizado — e também um espaço pra mostrar quem sou e o que estou construindo. Seja bem-vindo!</p>
+    </section>
+
+    <section id="projetos" data-aos="fade-up" data-aos-duration="800">
+      <h2>Projetos</h2>
+      <div class="projetos-container">
+        <div class="card">
+          <h3>Projeto 1</h3>
+          <p>Descrição breve do projeto. Pode ser um site, automação ou estudo que você fez.</p>
+          <a href="#" target="_blank">Ver Projeto</a>
+        </div>
+        <div class="card">
+          <h3>Projeto 2</h3>
+          <p>Outro projeto que demonstre suas habilidades ou aprendizagem.</p>
+          <a href="#" target="_blank">Ver Projeto</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculo" data-aos="fade-up" data-aos-duration="800">
+      <h2>Currículo</h2>
+      <p>Quer conhecer mais sobre minha trajetória profissional e acadêmica? Baixe meu currículo atualizado:</p>
+      <a href="curriculo-cesar.pdf.pdf" download target="_blank" class="btn-download">Baixar Currículo</a>
+    </section>
+
+    <section id="contato" data-aos="fade-up" data-aos-duration="800">
+      <h2>Contato</h2>
+      <p>Você pode me encontrar nas redes ou enviar uma mensagem:</p>
+      <div class="redes">
+        <a href="https://instagram.com/cesarcabral" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/cesarcabral" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="tel:+5511999999999" aria-label="Telefone"><i class="fas fa-phone"></i></a>
+        <a href="mailto:cesar@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/cesarcabral" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 César Cabral.</p>
+    </footer>
+  </main>
+
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.sidebar nav ul li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (window.pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

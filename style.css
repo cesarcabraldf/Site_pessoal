@@ -1,0 +1,247 @@
+/* Reset básico */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a1e40;
+  color: #f0f0f0;
+}
+
+/* Container geral: duas colunas */
+.container {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sidebar lateral esquerda */
+.sidebar {
+  width: 250px;
+  background-color: #142a6b;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.6);
+  z-index: 10;
+  user-select: none;
+}
+
+.sidebar h1 {
+  font-size: 2.5rem;
+  color: #66b2ff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar nav a {
+  color: #66b2ff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding-left: 0.6rem;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  color: #99cfff;
+  border-left-color: #66b2ff;
+}
+
+/* Conteúdo principal */
+.content {
+  margin-left: 250px;
+  padding: 3rem 2rem;
+  scroll-behavior: smooth;
+}
+
+/* Seções */
+section {
+  margin-bottom: 4rem;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  padding: 2rem;
+  border: 2px solid transparent;
+  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  scroll-margin-top: 120px;
+}
+
+section:hover {
+  border: 2px solid #66b2ff;
+  box-shadow: 0 0 20px rgba(102,178,255,0.5);
+  transform: translateY(-2px);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #66b2ff;
+  margin-bottom: 1rem;
+}
+
+/* Projetos */
+.projetos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #1f356e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 350px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  color: #f0f0f0;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(102,178,255,0.9);
+  background: linear-gradient(135deg, #1f356e, #2a4b94, #1f356e);
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+/* Botão baixar currículo */
+.btn-download {
+  display: inline-block;
+  background-color: #007acc;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-download:hover {
+  background-color: #005b99;
+}
+
+/* Links gerais */
+a {
+  color: #66b2ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Redes sociais */
+.redes {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.redes a {
+  color: #66b2ff;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.redes a:hover {
+  color: #99cfff;
+}
+
+/* Rodapé */
+footer {
+  color: #ccc;
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #0a1e40;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1rem 1rem;
+    box-shadow: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .sidebar h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .sidebar nav ul {
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sidebar nav ul li a {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-left: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  letter-spacing: 0.5px; /* <-- aqui */
+}
+
+
+  .sidebar nav ul li a:hover,
+  .sidebar nav ul li a.active {
+    border-left: none;
+    border-bottom: 2px solid #66b2ff;
+    color: #99cfff;
+  }
+
+  .content {
+    margin-left: 0;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+}
+#sobre p {
+  letter-spacing: 0.04em;   /* espaçamento agradável entre letras */
+  line-height: 1.7;         /* linha mais espaçada para facilitar a leitura */
+  font-size: 1.1rem;        /* um pouquinho maior, ajuda bastante */
+  margin-bottom: 1.2rem;    /* espaçamento entre parágrafos */
+}
