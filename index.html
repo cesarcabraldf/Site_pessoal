@@ -11,9 +11,16 @@
 </head>
 <body>
 
+<!-- Botão do menu mobile -->
+<button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 <div class="container">
 
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <h1>César Cabral</h1>
     <nav>
       <ul>
@@ -75,12 +82,16 @@
 
 </div>
 
+<!-- Overlay para fechar menu mobile -->
+<div class="overlay" id="overlay"></div>
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init();
 </script>
 
 <script>
+  // Navegação ativa
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.sidebar nav ul li a');
 
@@ -101,7 +112,36 @@
       }
     });
   });
+
+  // Menu mobile
+  const menuToggle = document.getElementById('menuToggle');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+  });
+
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  });
+
+  // Fechar menu ao clicar em link (mobile)
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      }
+    });
+  });
 </script>
 
 </body>
 </html>
+
